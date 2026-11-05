@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empréstimo - Inovateca</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="pagina-emprestimo">
+    
+    <img src="icones/logo2.png" alt="Inovateca" class="logo-fixa-canto" style="position: absolute; top: 20px; left: 20px; cursor: pointer;" onclick="window.location.href='Catálogo.html'">
+    <main class="container-emprestimo">
+        <div class="topo-emprestimo">
+            <div class="coluna-esq">
+                <img src="livros/livro1.jpg" alt="Capa Dom Casmurro" class="capa-livro">
+            </div>
+
+            <div class="coluna-dir">
+                <h2>Dom Casmurro</h2>
+                <p class="autor">Machado de Assis</p>
+                
+                <div class="avaliacao-compra">
+                    <span class="estrelas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </span>
+                    4.8 (1230 avaliações)
+                </div>
+
+                <hr class="linha-divisoria">
+
+                <h3 class="preco">R$ 10,50</h3>
+                <p class="instrucao-pagamento">Selecione o método de pagamento para pegar o livro emprestado:</p>
+
+                <div class="opcoes-pagamento">
+                    <button class="btn-pagamento" onclick="window.location.href='cartaoemprestimo.html'">Cartão de crédito</button>
+                    <button class="btn-pagamento" onclick="window.location.href='pixemprestimo.html'">PIX</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="rodape-emprestimo">
+            <div class="infos-emprestimo">
+                <h3>Informações do Empréstimo</h3>
+                
+                <div class="linha-info">
+                    <span>Prazo:</span>
+                    <span>21 dias</span>
+                </div>
+                <div class="linha-info">
+                    <span>Devolução Automática:</span>
+                    <span>22/05/2026</span>
+                </div>
+                <div class="linha-info">
+                    <span>Máximo de livros: 10 ativos</span>
+                    <span>3/10</span>
+                </div>
+            </div>
+
+            <div class="acao-emprestar">
+                <button class="btn-pegar-emprestado" onclick="window.location.href='livro.html'">Cancelar</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

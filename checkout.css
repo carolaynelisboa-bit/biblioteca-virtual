@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #160826 0%, #291047 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.checkout-container {
+    background-color: rgba(43, 27, 68, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 480px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.text-center {
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #bfa8e6;
+    margin-bottom: 24px;
+    line-height: 1.4;
+}
+
+/* Formulário de Cartão */
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    color: #d4c5f3;
+}
+
+.form-group input, .form-group select {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 12px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: #7b2cbf;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.form-group select option {
+    background-color: #291047;
+    color: #fff;
+}
+
+.form-row {
+    display: flex;
+    gap: 12px;
+}
+
+.half {
+    flex: 1;
+}
+
+/* Botões */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.button-group.vertical {
+    flex-direction: column;
+}
+
+.btn-confirmar {
+    flex: 1;
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-confirmar:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.btn-cancelar {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 24px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+.btn-cancelar:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* Estilos Específicos do PIX */
+.qr-code-box {
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.qr-code-box img {
+    display: block;
+}
+
+.pix-copia-cola {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.pix-copia-cola label {
+    font-size: 0.85rem;
+    color: #d4c5f3;
+}
+
+.pix-copia-cola input {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 10px;
+    color: #aaa;
+    font-size: 0.8rem;
+}
+
+.btn-copiar {
+    background: #5a2a9c;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-copiar:hover {
+    background: #7135c4;
+}
+
+.pix-timer {
+    font-size: 0.85rem;
+    color: #ff9e00;
+    margin-bottom: 20px;
+}
+
+/* Estilos Específicos do Google Pay */
+.google-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.google-user-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.google-icon {
+    background: #ffffff;
+    color: #4285f4;
+    font-weight: bold;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.google-card-info {
+    font-size: 0.85rem;
+    color: #bfa8e6;
+}
+
+.btn-google-pay {
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 14px;
+    border-radius: 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-google-pay:hover {
+    background-color: #1a1a1a;
+}
+
+/* Estilos da Página de Sucesso */
+.success-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+    color: #ffffff;
+    font-size: 2.2rem;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 0 20px rgba(0, 176, 155, 0.4);
+}
+
+.receipt-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.receipt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #bfa8e6;
+}
+
+.receipt-divider {
+    border: none;
+    border-top: 1px dashed rgba(255, 255, 255, 0.2);
+    margin: 12px 0;
+}
+
+.receipt-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.receipt-item:last-child {
+    margin-bottom: 0;
+}
+
+.highlight-price {
+    color: #2575fc;
+    font-size: 1.1rem;
+}
+
+.access-info {
+    font-size: 0.85rem;
+    color: #d4c5f3;
+    line-height: 1.4;
+    margin-bottom: 24px;
+}

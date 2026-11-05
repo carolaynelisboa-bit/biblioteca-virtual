@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Inovateca</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="login" class="panel">
+        <div class="auth-card">
+            <img src="icones/logo.png" alt="Inovateca" class="logo-gigante"> 
+            
+            <div class="input-container">
+                <div class="input-group"> 
+                    <input type="email" id="email-input" placeholder="digite seu e-mail">
+                </div>
+                <div class="input-group">
+                    <input type="password" id="senha-input" placeholder="sua senha">
+                </div>
+            </div>
+
+           <button class="btn-primary" onclick="alert('Bem-vindo à Inovateca!'); window.location.href='Catálogo.html'">Entrar</button>
+
+            <div class="switch-auth">
+                <p>Não possui conta?</p>
+                <button class="btn-secondary" onclick="window.location.href='Cadastro.html'">Criar conta</button>
+            </div>
+        </div>
+    </section>  
+    
+    <script src="script.js"></script>
+</body>
+</html>

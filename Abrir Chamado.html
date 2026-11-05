@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+  <section id="abrir-chamado" class="panel">
+        <div class="container-contato">
+            <div class="contact-card">
+                <div class="header-badge">
+                    <i class="fas fa-ticket-alt"></i>
+                    <h1>Abrir Chamado</h1>
+                </div>
+                <h2 style="margin-bottom: 20px;">Suporte <strong>Técnico</strong> 🛠️</h2>
+                <form>
+                    <div class="input-group" style="text-align: left;">
+                        <label style="color: #4facfe; font-weight: bold;">Assunto do Problema</label>
+                        <input type="text" placeholder="Ex: Erro ao baixar livro ou login">
+                    </div>
+                    
+                    <div class="input-group" style="text-align: left; margin-top: 15px;">
+                        <label style="color: #4facfe; font-weight: bold;">Descrição Detalhada</label>
+                        <textarea rows="5" placeholder="Descreva aqui o que está acontecendo..."></textarea>
+                    </div>
+
+                    <div class="button-container" style="display: flex; gap: 15px; justify-content: center; margin-top: 25px;">
+                        <button type="submit" class="btn-send">Enviar Chamado</button>
+                        <button type="button" class="btn-cancel" onclick="document.getElementById('ajuda').scrollIntoView({behavior: 'smooth'})">Cancelar</button>
+                        <script src="script.js"></script>
+                    </div>
+                </form>
+                <p class="footer-text" style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">
+                    Nosso tempo médio de resposta é de 24h úteis.
+                </p>
+            </div>
+        </div>
+    </section>
+    <img src="icones/logo2.png" alt="Inovateca" class="logo-fixa-canto" style="position: absolute; top: 20px; left: 20px; cursor: pointer;" onclick="window.location.href='Catálogo.html'">
+<script src="script.js"></script>
+    </body>
+</html>

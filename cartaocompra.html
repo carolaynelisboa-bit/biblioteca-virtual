@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento via Cartão - Inovateca</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <div class="checkout-container">
+        <h2>Pagamento com Cartão de Crédito</h2>
+        <p class="subtitle">Insira os dados do seu cartão para finalizar a compra de <strong>Dom Casmurro (R$ 24,99)</strong>.</p>
+
+        <form class="checkout-form">
+            <div class="form-group">
+                <label for="nome-cartao">Nome impresso no cartão</label>
+                <input type="text" id="nome-cartao" placeholder="Ex: MARIA S SILVA" required>
+            </div>
+
+            <div class="form-group">
+                <label for="numero-cartao">Número do cartão</label>
+                <input type="text" id="numero-cartao" placeholder="0000 0000 0000 0000" maxlength="19" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group half">
+                    <label for="validade">Validade</label>
+                    <input type="text" id="validade" placeholder="MM/AA" maxlength="5" required>
+                </div>
+                <div class="form-group half">
+                    <label for="cvv">CVV</label>
+                    <input type="password" id="cvv" placeholder="123" maxlength="4" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="parcelas">Parcelas</label>
+                <select id="parcelas">
+                    <option value="1">1x de R$ 24,99 à vista</option>
+                    <option value="2">2x de R$ 12,50 sem juros</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <a href="Catálogo.html" class="btn-cancelar">Voltar / Cancelar</a>
+                <button type="submit" class="btn-confirmar">Finalizar Compra</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

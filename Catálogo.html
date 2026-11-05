@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Inovateca</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="catalogo" class="content-panel-full">
+        <header class="top-header">
+            <div class="search-box">
+                <input type="text" placeholder="Buscar por título, autor ou ISBN...">
+            </div>
+            <div class="header-icons">
+    <span onclick="window.location.href='Meus Livros.html'" style="cursor:pointer">👤 Meus Livros</span> 
+    | 
+    <span onclick="window.location.href='Ajuda.html'" style="cursor:pointer">❓ Ajuda</span>
+</div>
+        </header> 
+
+       <img src="icones/logo2.png" alt="Inovateca" class="logo-fixa-canto" style="position: absolute; top: 20px; left: 20px;">
+        
+        <div class="main-layout"> 
+            <aside class="sidebar">
+                <div class="filter-badge">Filtros</div>
+                <div class="filter-group">
+                    <h4>Categorias</h4>
+                    <ul>
+                        <ul>
+    <li onclick="window.location.href='Ficção Científica.html'" style="color:#4facfe; cursor:pointer; font-weight:bold;">Ficção Científica</li>
+    
+    <li onclick="window.location.href='Romance.html'" style="color:#4facfe; cursor:pointer; font-weight:bold;">Romance</li>
+    
+     <li onclick="window.location.href='Fantasia.html'" style="color:#4facfe; cursor:pointer; font-weight:bold;">Fantasia</li>
+     <li onclick="window.location.href='historico.html'" style="color:#4facfe; cursor:pointer; font-weight:bold;">Histórico</li>
+    
+     <li onclick="window.location.href='terror.html'" style="color:#4facfe; cursor:pointer; font-weight:bold;">Terror</li>
+     <li onclick="window.location.href='suspense.html'" style="color:#4facfe; cursor:pointer; font-weight:bold;">Suspense e Mistério</li>
+     <li onclick="window.location.href='aventura.html'" style="color:#4facfe; cursor:pointer; font-weight:bold;">Aventura</li>
+     <li onclick="window.location.href='poesia.html'" style="color:#4facfe; cursor:pointer; font-weight:bold;">Poesia</li>
+     <li onclick="window.location.href='Universitario.html'" style="color:#4facfe; cursor:pointer; font-weight:bold;">Universitária</li>
+     <li onclick="window.location.href='religioso.html'" style="color:#4facfe; cursor:pointer; font-weight:bold;">Religioso</li>
+    </ul>
+                        
+                </div>
+            </aside>
+
+            <main class="books-display">
+                <div class="books-grid">
+                   <div class="book-card">
+    <img src="livros/livro1.jpg" alt="Capa Dom Casmurro">
+    <p>Dom Casmurro</p>
+    <a href="livro.html">Ver Detalhes</a>
+</div>
+                    <div class="book-card"><img src="livros/livro2.jpg"><p>O Pequeno Príncipe</p><a href="#">Ver Detalhes</a></div>
+                    <div class="book-card"><img src="livros/livro3.jpg"><p>Harry Potter</p><a href="#">Ver Detalhes</a></div>
+                    <div class="book-card"><img src="livros/livro4.jpg"><p>A Culpa é das Estrelas</p><a href="#">Ver Detalhes</a></div>
+                    <div class="book-card"><img src="livros/livro5.jpg"><p>O poder do hábito</p><a href="#">Ver Detalhes</a></div>
+                    <div class="book-card"><img src="livros/livro6.jpg"><p>A menina que roubava livros</p><a href="#">Ver Detalhes</a></div>
+                    <div class="book-card"><img src="livros/livro7.jpg"><p>O meu pé de laranja lima</p><a href="#">Ver Detalhes</a></div>
+                    <div class="book-card"><img src="livros/livro8.jpg"><p>Guerra fria</p><a href="#">Ver Detalhes</a></div>
+                </div>
+            </main>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

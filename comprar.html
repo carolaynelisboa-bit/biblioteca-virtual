@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprar - Inovateca</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="pagina-comprar">
+    
+    <img src="icones/logo2.png" alt="Inovateca" class="logo-fixa-canto" style="position: absolute; top: 20px; left: 20px; cursor: pointer;" onclick="window.location.href='Catálogo.html'">
+    <main class="container-compra">
+        <div class="compra-info-wrapper">
+            <div class="coluna-esquerda-compra">
+                <img src="livros/livro1.jpg" alt="Capa Dom Casmurro" class="capa-livro">
+            </div>
+
+            <div class="coluna-direita-compra">
+                <h2>Dom Casmurro</h2>
+                <p class="autor">Machado de Assis</p>
+                
+                <div class="avaliacao-compra">
+                    <span class="estrelas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </span>
+                    4.8 (1230 avaliações)
+                </div>
+
+                <hr class="linha-divisoria">
+
+                <h3 class="preco">R$ 24,99</h3>
+                <p class="instrucao-pagamento">Selecione o método de pagamento para comprar o livro:</p>
+
+                <div class="opcoes-pagamento">
+                    <button class="btn-pagamento" onclick="window.location.href='cartaocompra.html'">Cartão de crédito</button>
+                    <button class="btn-pagamento" onclick="window.location.href='pixcompra.html'">PIX</button>
+                </div>
+
+                <div class="checkbox-container">
+                    <label><input type="checkbox" id="check-presente"> Enviar como presente</label>
+                    <label><input type="checkbox" id="check-termos" checked> Concordo com os termos de serviço</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="compra-acoes-footer">
+            <button class="btn-pegar-emprestado" onclick="window.location.href='livro.html'">Cancelar</button>
+            <div class="seguranca-texto">
+                <i class="fas fa-lock"></i> Compra segura e criptografada
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Inovateca</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="cadastro" class="panel">
+        <div class="auth-card">
+            <img src="icones/logo.png" alt="Inovateca" class="logo-gigante">
+            <h2 style="margin-bottom:20px">Cadastro</h2>
+            
+            <div class="input-container">
+                <input type="text" id="cad-nome" placeholder="Nome Completo">
+                <input type="email" id="cad-email" placeholder="Seu melhor e-mail">
+                <input type="text" id="cad-cpf" placeholder="CPF">
+                <input type="tel" id="cad-telefone" placeholder="Telefone">
+                <input type="password" id="cad-senha" placeholder="Crie uma senha">
+                <input type="password" id="cad-confirma" placeholder="Confirme a senha">
+            </div>
+            
+           <button class="btn-primary" onclick="if(document.getElementById('cad-nome').value !== '' && document.getElementById('cad-senha').value === document.getElementById('cad-confirma').value && document.getElementById('cad-senha').value !== '') { alert('Cadastro finalizado com sucesso!'); window.location.href='Catálogo.html'; } else { alert('Preencha os dados e verifique se as senhas são iguais.'); }">Finalizar Cadastro</button>
+            <p class="switch-auth"><a href="index.html">Voltar ao Login</a></p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

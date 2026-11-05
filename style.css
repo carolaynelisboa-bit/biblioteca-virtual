@@ -1,0 +1,596 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+body { background: radial-gradient(circle at center, #2b1055 0%, #000 100%); color: white; scroll-behavior: smooth; overflow-x: hidden; }
+
+.stars-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); z-index: -1; }
+.logo-fixa-canto { position: fixed; top: 20px; left: 30px; width: 150px; z-index: 9999; pointer-events: none; }
+.panel { min-height: 100vh; display: flex; justify-content: center; align-items: center; }
+.romance-huge-title { width: 100%; text-align: center; font-size: 60px; font-weight: 700; text-transform: uppercase; color: white; margin: 40px 0; letter-spacing: 2px; }
+
+/* --- AUTH (LOGIN/CADASTRO) --- */
+.auth-card { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 30px; padding: 40px; width: 450px; text-align: center; border: 1px solid rgba(255,255,255,0.1); }
+.logo-gigante { width: 350px; margin-bottom: 10px; }
+.auth-card input { width: 100%; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; padding: 15px; color: white; font-size: 18px; margin-top: 15px; }
+.btn-primary { width: 100%; padding: 18px; margin-top: 25px; border-radius: 10px; border: none; font-weight: bold; background: linear-gradient(90deg, #6a11cb, #2575fc); color: white; font-size: 20px; cursor: pointer; }
+
+/* --- CATALOGO --- */
+
+.top-header { display: flex; align-items: center; justify-content: space-between; padding: 15px 40px; background: rgba(0,0,0,0.6); }
+.search-box input { background: white; color: #333; border-radius: 20px; padding: 10px 20px; width: 500px; border: none; margin-left: 650px; }
+.main-layout { display: flex; padding: 40px; gap: 30px; }
+.sidebar { width: 250px; }
+.filter-badge { background: #3a86ff; padding: 10px; border-radius: 20px; text-align: center; font-weight: bold; }
+.filter-group h4 { font-size: 32px; margin: 20px 0; color: white; text-transform: uppercase; font-weight: 700; }
+.filter-group li { list-style: none; font-size: 18px; padding: 5px 0; opacity: 0.8; transition: 0.3s; }
+.books-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; flex-grow: 1; }
+.logo-fixa-canto {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 100px;
+    z-index: 9999; /* Aumentamos muito o z-index para ela ficar no topo de tudo */
+    cursor: pointer;
+    pointer-events: auto; /* Garante que o clique seja registrado */
+}
+/* --- ESTILO DOS LIVROS COM ANIMAÇÃO --- */
+.book-card { 
+    background: rgba(255,255,255,0.05); 
+    padding: 15px; 
+    border-radius: 15px; 
+    text-align: center; 
+    /* A mágica acontece aqui: */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    cursor: pointer;
+    position: relative; /* Necessário para o z-index funcionar */
+    z-index: 1;
+}
+
+/* Quando passa o mouse no card do livro */
+.book-card:hover {
+    transform: scale(1.1) translateY(-15px); /* Aumenta e sobe */
+    z-index: 99; /* Joga o livro para a frente de todos os outros */
+    background: rgba(255, 255, 255, 0.15); 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8); /* Sombra de profundidade */
+}
+
+.book-card img { 
+    width: 100%; 
+    border-radius: 8px; 
+    margin-bottom: 10px; 
+    transition: 0.3s; 
+}
+
+/* Brilho extra na capa do livro ao passar o mouse */
+.book-card:hover img {
+    filter: brightness(1.2);
+    box-shadow: 0 0 15px rgba(79, 172, 254, 0.4);
+}
+.btn-dw { background: #4facfe; border: none; padding: 8px 15px; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; }
+.label-purple { background-color: #6a11cb; color: white; padding: 5px 15px; border-radius: 4px; display: inline-block; font-weight: bold; font-size: 30px; text-transform: uppercase; margin: 10px 40px; }
+
+/* --- AJUDA --- */
+.title-section-ajuda { font-size: 32px; margin-bottom: 40px; display: flex; align-items: center; justify-content: center; }
+.purple-circle { background: #a64dff; width: 45px; height: 45px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; font-weight: bold; }
+.help-main-flex { display: flex; align-items: center; justify-content: center; gap: 60px; }
+.help-grid-blue { display: grid; grid-template-columns: repeat(2, 220px); gap: 20px; }
+.help-card { background: #5d78ff; padding: 30px; border-radius: 25px; text-align: center; cursor: pointer; transition: 0.3s; }
+.help-card:hover { transform: scale(1.05); }
+.help-card img { width: 60px; margin-bottom: 10px; }
+.img-robo-ajuda { width: 400px; }
+
+/* TICKET FOOTER CENTRALIZADO */
+.ticket-footer { 
+    text-align: center; 
+    margin-top: 50px;  
+    font-size: 18px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;    
+    justify-content: center;
+    gap: 15px;
+}
+.ticket-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.mini-envelope { width: 35px; }
+.ticket-line a { color: white; text-decoration: none; font-weight: bold; border-bottom: 1px solid white; transition: 0.3s; }
+
+/* --- CARDS PREMIUM (FAQ, TUTORIAIS, SEGURANÇA E CONTATO) --- */
+.container-contato { width: 100%; display: flex; justify-content: center; padding: 60px 20px; }
+.contact-card { background: rgba(40, 60, 180, 0.15); backdrop-filter: blur(12px); padding: 60px 45px 40px; border-radius: 30px; width: 100%; max-width: 550px; position: relative; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4); text-align: center; }
+.contact-card .header-badge { background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); display: flex; align-items: center; padding: 12px 30px; border-radius: 50px; position: absolute; top: -25px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: 14px;}
+.contact-card h1 { font-size: 1.5rem; }
+.contact-card h2 { margin-bottom: 20px; }
+.contact-card label { display: block; margin-bottom: 5px; color: #4facfe; font-size: 0.9rem; font-weight: bold; text-align: left; }
+.contact-card input, .contact-card textarea { width: 100%; padding: 14px 18px; border-radius: 12px; background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.2); color: white; margin-bottom: 15px; outline: none; }
+.btn-send { background: linear-gradient(90deg, #2575fc, #6a11cb); color: white; padding: 12px 40px; border-radius: 30px; border:none; font-weight:bold; cursor:pointer; }
+.btn-cancel { background: rgba(255,255,255,0.1); color: white; padding: 12px 40px; border-radius: 30px; border:none; cursor:pointer; }
+.footer-text { text-align: center; margin-top: 35px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); }
+.button-container { display: flex; gap: 15px; justify-content: center; margin-top: 10px; }
+
+/* ESTILO DAS LISTAS EM LINHA */
+.security-list { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+.security-row { background: rgba(0, 0, 0, 0.3); padding: 15px 20px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); display: flex; align-items: center; gap: 15px; text-align: left; }
+.security-row i { color: #4facfe; font-size: 1.1rem; }
+.security-row p { margin: 0; font-size: 1rem; color: white; flex-grow: 1; }
+
+/* HOVER E ÍCONES DAS LISTAS */
+.tutorial-row { cursor: pointer; transition: 0.3s; }
+.tutorial-row:hover { background: rgba(106, 17, 203, 0.3); transform: scale(1.02); border-color: #6a11cb; }
+.play-icon { color: white !important; transition: 0.3s; }
+.tutorial-row:hover .play-icon { color: #4facfe !important; }
+
+/* AJUSTES ESPECÍFICOS PARA O FORMULÁRIO DE CHAMADO */
+#abrir-chamado .contact-card {
+    background: rgba(40, 60, 180, 0.15);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#abrir-chamado textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    resize: none;
+    outline: none;
+}
+
+#abrir-chamado input:focus, #abrir-chamado textarea:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 10px rgba(106, 17, 203, 0.3);
+}
+/* =========================================
+   TELA DE DETALHES DO LIVRO
+========================================= */
+
+/* Fundo roxo simulando o espaço */
+body.pagina-livro {
+    background: radial-gradient(circle at center, #2b1055 0%, #000 100%);
+    color: white;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #000; /* Texto escuro como na imagem */
+}
+
+/* Caixa principal que segura tudo */
+.container-livro {
+    display: flex;
+    gap: 40px; /* Espaço entre a imagem e o texto */
+    max-width: 900px;
+    padding: 30px;
+    /* Efeito de "vidro" atrás do texto */
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* COLUNA ESQUERDA (Capa e Botões) */
+.coluna-esquerda {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 200px; /* Largura da capa */
+}
+
+.capa-livro {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    margin-bottom: 10px;
+}
+
+/* Estilo dos 3 botões ovais */
+.btn-livro {
+    width: 100%;
+    padding: 10px;
+    background: rgba(70, 80, 180, 0.6); /* Azul escuro transparente */
+    color: #fff;
+    border: none;
+    border-radius: 25px; /* Deixa o botão redondo nas pontas */
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-livro:hover {
+    background: rgba(70, 80, 180, 0.9);
+}
+
+/* COLUNA DIREITA (Textos) */
+.coluna-direita {
+    flex: 1; /* Ocupa o resto do espaço */
+}
+
+.coluna-direita h2 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.coluna-direita .autor {
+    margin: 5px 0 15px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.coluna-direita hr {
+    border: 0;
+    height: 1px;
+    background: #555;
+    margin-bottom: 15px;
+}
+
+.coluna-direita p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+/* Estrelinhas de avaliação */
+.avaliacao {
+    margin: 15px 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.estrelas {
+    color: #ffcc00; /* Amarelo dourado */
+}
+
+.sinopse {
+    margin-top: 20px;
+    line-height: 1.6;
+    text-align: justify;
+}
+/* =========================================
+   TELA DE FINALIZAÇÃO DE COMPRA
+========================================= */
+
+body.pagina-comprar {
+    background: radial-gradient(circle at center, #2b1055 0%, #000 100%);
+    color: white;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #000;
+}
+
+/* Container principal ajustado para ter o rodapé */
+.container-compra {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    width: 100%;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.compra-info-wrapper {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.coluna-esquerda-compra { width: 200px; }
+.coluna-direita-compra { flex: 1; }
+
+.coluna-direita-compra h2 { margin: 0; font-size: 26px; }
+.coluna-direita-compra .autor { margin: 5px 0 10px 0; font-size: 18px; color: #333; }
+.avaliacao-compra { font-size: 16px; margin-bottom: 10px; }
+.linha-divisoria { border: 0; height: 1px; background: #555; margin: 15px 0; }
+.preco { font-size: 28px; font-weight: bold; margin: 10px 0; color: #111; }
+.instrucao-pagamento { font-size: 16px; margin-bottom: 15px; }
+
+/* Botões de pagamento roxos/azuis com gradiente */
+.opcoes-pagamento {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-pagamento {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #1f3b9c, #7025c4);
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+/* Quando passa o mouse ou quando clica e ele fica selecionado */
+.btn-pagamento:hover, .btn-pagamento.selecionado {
+    background: linear-gradient(90deg, #162a73, #551b96);
+    border: 2px solid #fff; /* Borda branca para mostrar que selecionou */
+}
+
+/* Checkboxes lado a lado */
+.checkbox-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Rodapé: Botões Cancelar / Comprar */
+.compra-acoes-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.btn-acao {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    background: #2546b0;
+    transition: 0.3s;
+}
+
+.btn-acao:hover { background: #183080; }
+
+.seguranca-texto {
+    font-size: 14px;
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 10px;
+}
+/* =========================================
+   TELA DE AMOSTRA DE LEITURA
+========================================= */
+
+body.pagina-amostra {
+ background: radial-gradient(circle at center, #2b1055 0%, #000 100%);
+    color: white;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Cabeçalho */
+.header-amostra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.header-amostra h1 {
+    font-size: 28px;
+    color: #ffffff;
+    margin: 0;
+}
+
+.btn-voltar-texto {
+    position: absolute;
+    right: 0;
+    font-size: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-voltar-texto:hover {
+    text-decoration: underline;
+}
+
+/* A folha de papel do livro */
+.container-folha {
+    background-color: #fff;
+    width: 100%;
+    max-width: 900px;
+    height: 60vh; /* Altura da folha na tela */
+    overflow-y: auto; /* Permite rolar o texto por dentro da caixa */
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: "Times New Roman", Times, serif; /* Fonte clássica de livro */
+}
+
+/* Estilo do texto do livro */
+.conteudo-livro .capitulo-titulo {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.conteudo-livro .capitulo-subtitulo {
+    text-align: center;
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.conteudo-livro p {
+    text-align: justify;
+    text-indent: 40px; /* Recuo no começo do parágrafo */
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* Botões Embaixo */
+.footer-amostra {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.btn-acao-grande {
+    background-color: #2546b0;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 40px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-acao-grande:hover {
+    background-color: #183080;
+}
+/* =========================================
+   TELA DE EMPRÉSTIMO
+========================================= */
+
+body.pagina-emprestimo {
+    background: radial-gradient(circle at center, #2b1055 0%, #000 100%);
+    color: white;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #000;
+}
+
+.container-emprestimo {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    width: 100%;
+    padding: 30px;
+    background: rgba(230, 224, 224, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.topo-emprestimo {
+    display: flex;
+    gap: 40px;
+}
+
+.coluna-esq { width: 200px; }
+.coluna-dir { flex: 1; }
+
+.coluna-dir h2 { margin: 0; font-size: 26px; }
+.coluna-dir .autor { margin: 5px 0 10px 0; font-size: 18px; color: #070707; }
+
+/* Rodapé do Empréstimo */
+.rodape-emprestimo {
+    display: flex;
+    justify-content: space-between; /* Empurra infos pra esquerda e botão pra direita */
+    align-items: flex-end; /* Alinha o botão por baixo */
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0,0,0,0.1); /* Uma linha suave para separar */
+}
+
+.infos-emprestimo {
+    width: 60%;
+}
+
+.infos-emprestimo h3 {
+    margin: 0 0 15px 0;
+    font-size: 20px;
+    color: #000;
+}
+
+.linha-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #020202;
+}
+
+/* O Botão de Pegar Emprestado */
+.btn-pegar-emprestado {
+    background-color: #2546b0;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-pegar-emprestado:hover {
+    background-color: #183080;
+}
+
+/* ==========================================
+   ANIMAÇÕES DE TRANSIÇÃO DE PÁGINA
+   ========================================== */
+
+/* Animação de entrada (quando a página carrega) */
+body {
+    animation: entradaSuave 0.5s ease-out forwards;
+}
+
+@keyframes entradaSuave {
+    from {
+        opacity: 0;
+        transform: translateY(15px); /* Começa um pouco mais para baixo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Vai para a posição original */
+    }
+}
+
+/* Classe de saída (adicionada pelo JavaScript na hora de trocar de tela) */
+body.saindo {
+    opacity: 0;
+    transform: translateY(-15px); /* Sobe um pouquinho antes de sumir */
+    transition: opacity 0.4s ease-in, transform 0.4s ease-in;
+}

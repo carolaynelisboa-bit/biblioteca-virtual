@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento via PIX - Inovateca</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <div class="checkout-container text-center">
+        <h2>Pagamento via PIX</h2>
+        <p class="subtitle">Escaneie o QR Code abaixo com o aplicativo do seu banco para pagar <strong>R$ 10,50</strong>.</p>
+
+        <div class="qr-code-box">
+            <!-- Imagem genérica de QR Code de exemplo -->
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=inovateca-pix-exemplo" alt="QR Code PIX">
+        </div>
+
+        <div class="pix-copia-cola">
+            <label>Código Copia e Cola:</label>
+            <input type="text" value="00020126360014BR.GOV.BCB.PIX0114+5511999999999520400005303986540524.995802BR5913INOVATECA6008SAO PAULO62070503***6304E2CA" id="input-pix" readonly>
+            <button type="button" class="btn-copiar" onclick="navigator.clipboard.writeText(document.getElementById('input-pix').value)">Copiar Código PIX</button>
+        </div>
+
+        <div class="pix-timer">
+            <p>Este código expira em <strong>15:00</strong> minutos.</p>
+        </div>
+
+        <div class="button-group">
+            <a href="Catálogo.html" class="btn-cancelar">Voltar / Cancelar</a>
+            <button type="button" class="btn-confirmar">Já fiz o pagamento</button>
+        </div>
+    </div>
+</body>
+</html>
