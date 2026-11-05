@@ -19,11 +19,26 @@
                 <div class="book-card"><img src="livros3/livro70.jpg"><p>Bloodborne</p></div>
                 <div class="book-card"><img src="livros3/livro71.jpg"><p>Uma Aventura a Dois</p></div>
                 <div class="book-card"><img src="livros3/livro99.jpg"><p>Tuti e a Capa Mágica</p></div>
-                <div class="book-card"><img src="livros3/livro73.jpg"><p>Tuti e a Capa Mágica</p></div>
+                <div class="book-card"><img src="livros3/livro73.jpg"><p>Os reinos partidos</p></div>
             </div>
         </div>
          <img src="icones/logo2.png" alt="Inovateca" class="logo-fixa-canto" style="position: absolute; top: 20px; left: 20px; cursor: pointer;" onclick="window.location.href='Catálogo.html'">
     </section>
     <script src="script.js"></script>
+    <script>
+    const campoBusca = document.querySelector('.search-box input');
+
+    if (campoBusca) {
+        campoBusca.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const termo = encodeURIComponent(this.value.trim());
+                if (termo !== '') {
+                    // Redireciona para o Catálogo passando o termo digitado
+                    window.location.href = `Catálogo.html?busca=${termo}`;
+                }
+            }
+        });
+    }
+</script>
 </body>
 </html>

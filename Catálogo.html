@@ -10,16 +10,16 @@
     <section id="catalogo" class="content-panel-full">
         <header class="top-header">
             <div class="search-box">
-                <input type="text" placeholder="Buscar por título, autor ou ISBN...">
+                <input type="text" id="campo-busca" placeholder="Buscar por título, autor ou gênero...">
             </div>
             <div class="header-icons">
-    <span onclick="window.location.href='Meus Livros.html'" style="cursor:pointer">👤 Meus Livros</span> 
-    | 
-    <span onclick="window.location.href='Ajuda.html'" style="cursor:pointer">❓ Ajuda</span>
-</div>
+                <span onclick="window.location.href='Meus Livros.html'" style="cursor:pointer">👤 Meus Livros</span> 
+                | 
+                <span onclick="window.location.href='Ajuda.html'" style="cursor:pointer">❓ Ajuda</span>
+            </div>
         </header> 
 
-       <img src="icones/logo2.png" alt="Inovateca" class="logo-fixa-canto" style="position: absolute; top: 20px; left: 20px;">
+        <img src="icones/logo2.png" alt="Inovateca" class="logo-fixa-canto" style="position: absolute; top: 20px; left: 20px;">
         
         <div class="main-layout"> 
             <aside class="sidebar">
@@ -27,43 +27,532 @@
                 <div class="filter-group">
                     <h4>Categorias</h4>
                     <ul>
-                        <ul>
-    <li onclick="window.location.href='Ficção Científica.html'" style="color:#4facfe; cursor:pointer; font-weight:bold;">Ficção Científica</li>
-    
-    <li onclick="window.location.href='Romance.html'" style="color:#4facfe; cursor:pointer; font-weight:bold;">Romance</li>
-    
-     <li onclick="window.location.href='Fantasia.html'" style="color:#4facfe; cursor:pointer; font-weight:bold;">Fantasia</li>
-     <li onclick="window.location.href='historico.html'" style="color:#4facfe; cursor:pointer; font-weight:bold;">Histórico</li>
-    
-     <li onclick="window.location.href='terror.html'" style="color:#4facfe; cursor:pointer; font-weight:bold;">Terror</li>
-     <li onclick="window.location.href='suspense.html'" style="color:#4facfe; cursor:pointer; font-weight:bold;">Suspense e Mistério</li>
-     <li onclick="window.location.href='aventura.html'" style="color:#4facfe; cursor:pointer; font-weight:bold;">Aventura</li>
-     <li onclick="window.location.href='poesia.html'" style="color:#4facfe; cursor:pointer; font-weight:bold;">Poesia</li>
-     <li onclick="window.location.href='Universitario.html'" style="color:#4facfe; cursor:pointer; font-weight:bold;">Universitária</li>
-     <li onclick="window.location.href='religioso.html'" style="color:#4facfe; cursor:pointer; font-weight:bold;">Religioso</li>
-    </ul>
-                        
+                        <li class="btn-categoria" data-categoria="" style="color:#4facfe; cursor:pointer; font-weight:bold;"> Todos os Livros</li>
+                        <li class="btn-categoria" data-categoria="Ficção Científica" style="color:#4facfe; cursor:pointer; font-weight:bold;">Ficção Científica</li>
+                        <li class="btn-categoria" data-categoria="Romance" style="color:#4facfe; cursor:pointer; font-weight:bold;">Romance</li>
+                        <li class="btn-categoria" data-categoria="Fantasia" style="color:#4facfe; cursor:pointer; font-weight:bold;">Fantasia</li>
+                        <li class="btn-categoria" data-categoria="Histórico" style="color:#4facfe; cursor:pointer; font-weight:bold;">Histórico</li>
+                        <li class="btn-categoria" data-categoria="Terror" style="color:#4facfe; cursor:pointer; font-weight:bold;">Terror</li>
+                        <li class="btn-categoria" data-categoria="Suspense e Mistério" style="color:#4facfe; cursor:pointer; font-weight:bold;">Suspense e Mistério</li>
+                        <li class="btn-categoria" data-categoria="Aventura" style="color:#4facfe; cursor:pointer; font-weight:bold;">Aventura</li>
+                        <li class="btn-categoria" data-categoria="Poesia" style="color:#4facfe; cursor:pointer; font-weight:bold;">Poesia</li>
+                        <li class="btn-categoria" data-categoria="Universitária" style="color:#4facfe; cursor:pointer; font-weight:bold;">Universitária</li>
+                        <li class="btn-categoria" data-categoria="Religioso" style="color:#4facfe; cursor:pointer; font-weight:bold;">Religioso</li>
+                    </ul>
                 </div>
             </aside>
 
             <main class="books-display">
-                <div class="books-grid">
-                   <div class="book-card">
-    <img src="livros/livro1.jpg" alt="Capa Dom Casmurro">
-    <p>Dom Casmurro</p>
-    <a href="livro.html">Ver Detalhes</a>
-</div>
-                    <div class="book-card"><img src="livros/livro2.jpg"><p>O Pequeno Príncipe</p><a href="#">Ver Detalhes</a></div>
-                    <div class="book-card"><img src="livros/livro3.jpg"><p>Harry Potter</p><a href="#">Ver Detalhes</a></div>
-                    <div class="book-card"><img src="livros/livro4.jpg"><p>A Culpa é das Estrelas</p><a href="#">Ver Detalhes</a></div>
-                    <div class="book-card"><img src="livros/livro5.jpg"><p>O poder do hábito</p><a href="#">Ver Detalhes</a></div>
-                    <div class="book-card"><img src="livros/livro6.jpg"><p>A menina que roubava livros</p><a href="#">Ver Detalhes</a></div>
-                    <div class="book-card"><img src="livros/livro7.jpg"><p>O meu pé de laranja lima</p><a href="#">Ver Detalhes</a></div>
-                    <div class="book-card"><img src="livros/livro8.jpg"><p>Guerra fria</p><a href="#">Ver Detalhes</a></div>
+                <div class="books-grid" id="container-livros">
+
+                    <!-- Livros Iniciais -->
+                    <div class="book-card" data-genero="Romance Literatura">
+                        <img src="livros/livro1.jpg" alt="Dom Casmurro">
+                        <p>Dom Casmurro</p>
+                        <a href="livro.html">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Aventura Infanto-juvenil">
+                        <img src="livros/livro2.jpg" alt="O Pequeno Príncipe">
+                        <p>O Pequeno Príncipe</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Fantasia Aventura">
+                        <img src="livros/livro3.jpg" alt="Harry Potter">
+                        <p>Harry Potter</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Romance Drama">
+                        <img src="livros/livro4.jpg" alt="A Culpa é das Estrelas">
+                        <p>A Culpa é das Estrelas</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Universitária Desenvolvimento">
+                        <img src="livros/livro5.jpg" alt="O Poder do Hábito">
+                        <p>O poder do hábito</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Histórico Drama">
+                        <img src="livros/livro6.jpg" alt="A Menina que Roubava Livros">
+                        <p>A menina que roubava livros</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Romance Drama">
+                        <img src="livros/livro7.jpg" alt="O Meu Pé de Laranja Lima">
+                        <p>O meu pé de laranja lima</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Histórico Guerra">
+                        <img src="livros/livro8.jpg" alt="Guerra Fria">
+                        <p>Guerra fria</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+
+                    <!-- Livros de Aventura -->
+                    <div class="book-card" data-genero="Aventura Fantasia">
+                        <img src="livros3/livro66.jpg" alt="A Guerreira: A Domadora de Dragões">
+                        <p>A Guerreira: A Domadora de Dragões</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Aventura Infanto-juvenil">
+                        <img src="livros3/livro67.jpg" alt="As Aventuras de Dorita">
+                        <p>As Aventuras de Dorita</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Aventura">
+                        <img src="livros3/livro68.jpg" alt="Aventura pela Amazónia">
+                        <p>Aventura pela Amazónia</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Aventura Fantasia">
+                        <img src="livros3/livro69.jpg" alt="Prince of Thorns">
+                        <p>Prince of Thorns</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Aventura Fantasia Terror">
+                        <img src="livros3/livro70.jpg" alt="Bloodborne">
+                        <p>Bloodborne</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Aventura Romance">
+                        <img src="livros3/livro71.jpg" alt="Uma Aventura a Dois">
+                        <p>Uma Aventura a Dois</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Aventura Infanto-juvenil">
+                        <img src="livros3/livro99.jpg" alt="Tuti e a Capa Mágica">
+                        <p>Tuti e a Capa Mágica</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Aventura Infanto-juvenil">
+                        <img src="livros3/livro73.jpg" alt="Tuti e a Capa Mágica">
+                        <p>Tuti e a Capa Mágica</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+
+                    <!-- Livros de Fantasia -->
+                    <div class="book-card" data-genero="Fantasia Aventura">
+                        <img src="livros/livro01.webp" alt="O Senhor dos Anéis">
+                        <p>O Senhor dos Anéis</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Fantasia Aventura">
+                        <img src="livros/livro02.jpg" alt="As Crónicas de Nárnia">
+                        <p>As Crónicas de Nárnia</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Fantasia">
+                        <img src="livros/livro03.webp" alt="A História sem Fim">
+                        <p>A História sem Fim</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Fantasia">
+                        <img src="livros/livro04.jpg" alt="O Nome do Vento">
+                        <p>O Nome do Vento</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Fantasia">
+                        <img src="livros/livro05.jpg" alt="Mistborn: O Império Final">
+                        <p>Mistborn: O Império Final</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Fantasia Aventura">
+                        <img src="livros/livro06.jpg" alt="Percy Jackson e o Ladrão de Raios">
+                        <p>Percy Jackson e o Ladrão de Raios</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Fantasia">
+                        <img src="livros/livro07.jpg" alt="Deuses Americanos">
+                        <p>Deuses Americanos</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Fantasia">
+                        <img src="livros/livro08.jpg" alt="O Último Desejo">
+                        <p>O Último Desejo</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+
+                    <!-- Livros de Ficção Científica -->
+                    <div class="book-card" data-genero="Ficção Científica">
+                        <img src="livros/livro21.jpg" alt="Duna">
+                        <p>Duna</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Ficção Científica">
+                        <img src="livros/livro22.jpg" alt="2001: Odisséia">
+                        <p>2001: Odisséia</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Ficção Científica">
+                        <img src="livros/livro23.jpg" alt="Crónicas Marcianas">
+                        <p>Crónicas Marcianas</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Ficção Científica Cyberpunk">
+                        <img src="livros/livro24.jpg" alt="Neuromancer">
+                        <p>Neuromancer</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Ficção Científica">
+                        <img src="livros/livro32.png" alt="Fundação">
+                        <p>Fundação</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Ficção Científica">
+                        <img src="livros/livro33.jpg" alt="A Mão Esquerda da Escuridão">
+                        <p>A Mão Esquerda da Escuridão</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Ficção Científica Dystopia">
+                        <img src="livros/livro34.jpg" alt="Fahrenheit 451">
+                        <p>Fahrenheit 451</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Ficção Científica Comédia">
+                        <img src="livros/livro35.webp" alt="O Guia do Mochileiro das Galáxias">
+                        <p>O Guia do Mochileiro das Galáxias</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+
+                    <!-- Livros de Histórico -->
+                    <div class="book-card" data-genero="Histórico">
+                        <img src="livrosprt2/livro36.png" alt="A História do Mundo para Quem Tem Pressa">
+                        <p>A História do Mundo para Quem Tem Pressa</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Histórico">
+                        <img src="livrosprt2/livro37.jpg" alt="Uma História do Mundo">
+                        <p>Uma História do Mundo</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Histórico Religioso">
+                        <img src="livrosprt2/livro38.jpg" alt="A Bíblia Contada Como Uma Só História do Começo ao Fim">
+                        <p>A Bíblia Contada Como Uma Só História do Começo ao Fim</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Histórico Brasil">
+                        <img src="livrosprt2/livro39.jpg" alt="História do Brasil Colônia">
+                        <p>História do Brasil Colônia</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Histórico Filosofia">
+                        <img src="livrosprt2/livro40.jpg" alt="Pensamentos Decoloniais">
+                        <p>Pensamentos Decoloniais</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Histórico Brasil">
+                        <img src="livrosprt2/livro41.jpg" alt="História do Brasil República">
+                        <p>História do Brasil República</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Histórico Brasil">
+                        <img src="livrosprt2/livro56.jpg" alt="História do Brasil">
+                        <p>História do Brasil</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Histórico Revista">
+                        <img src="livrosprt2/livro57.jpg" alt="Revista de História da Biblioteca Nacional">
+                        <p>Revista de História da Biblioteca Nacional</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+
+                    <!-- Livros de Poesia -->
+                    <div class="book-card" data-genero="Poesia">
+                        <img src="livros3/livro74.jpg" alt="Poesia na Fonte">
+                        <p>Poesia na Fonte</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Poesia Educacional">
+                        <img src="livros3/livro75.jpg" alt="Poesia na Sala de Aula">
+                        <p>Poesia na Sala de Aula</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Poesia">
+                        <img src="livros3/livro76.jpg" alt="Um Grande Poema">
+                        <p>Um Grande Poema</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Poesia">
+                        <img src="livros3/livro77.jpg" alt="Caderno de Poemas">
+                        <p>Caderno de Poemas</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Poesia">
+                        <img src="livros3/livro78.jpg" alt="Poemas de uma Iniciante">
+                        <p>Poemas de uma Iniciante</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Poesia">
+                        <img src="livros3/livro79.jpg" alt="Obra Poética">
+                        <p>Obra Poética</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Poesia">
+                        <img src="livros3/livro80.jpg" alt="Poesias da Minha Alma">
+                        <p>Poesias da Minha Alma</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Poesia">
+                        <img src="livros3/livro81.jpg" alt="As Poesias de uma Pensante">
+                        <p>As Poesias de uma Pensante</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+
+                    <!-- Livros Religiosos -->
+                    <div class="book-card" data-genero="Religioso">
+                        <img src="livros3/livro90.jpg" alt="Bíblia Sagrada">
+                        <p>Bíblia Sagrada</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Religioso">
+                        <img src="livros3/livro91.jpg" alt="Manso & Humilde">
+                        <p>Manso & Humilde</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Religioso">
+                        <img src="livros3/livro92.jpg" alt="Eu, Meu Pavio Curto e Deus">
+                        <p>Eu, Meu Pavio Curto e Deus</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Religioso">
+                        <img src="livros3/livro93.jpg" alt="Bíblia Sagrada - Novo Testamento">
+                        <p>Bíblia Sagrada - Novo Testamento</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Religioso Infanto-juvenil">
+                        <img src="livros3/livro94.jpg" alt="Bíblia Infantil">
+                        <p>Bíblia Infantil</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Religioso">
+                        <img src="livros3/livro98.jpg" alt="O Deus que Destrói Sonhos">
+                        <p>O Deus que Destrói Sonhos</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Religioso">
+                        <img src="livros3/livro96.jpg" alt="Bíblia de Estudo Esperança">
+                        <p>Bíblia de Estudo Esperança</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Religioso">
+                        <img src="livros3/livro97.jpg" alt="Cristianismo Puro e Simples">
+                        <p>Cristianismo Puro e Simples</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+
+                    <!-- Livros de Romance -->
+                    <div class="book-card" data-genero="Romance">
+                        <img src="livros/livro10.jpg" alt="Orgulho e Preconceito">
+                        <p>Orgulho e Preconceito</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Romance">
+                        <img src="livros/livro9.jpg" alt="Um Dia">
+                        <p>Um Dia</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Romance Drama">
+                        <img src="livros/livro14.jpg" alt="Como Eu Era Antes">
+                        <p>Como Eu Era Antes</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Romance">
+                        <img src="livros/livro13.jpg" alt="P.S. Eu Te Amo">
+                        <p>P.S. Eu Te Amo</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Romance Jovem">
+                        <img src="livros/livro12.jpg" alt="Para Todos os Garotos">
+                        <p>Para Todos os Garotos</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Romance Drama">
+                        <img src="livros/livro11.jpg" alt="É Assim que Acaba">
+                        <p>É Assim que Acaba</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Romance Comédia">
+                        <img src="livros/livro15.jpg" alt="A Hipótese do Amor">
+                        <p>A Hipótese do Amor</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+
+                    <!-- Livros de Suspense e Mistério -->
+                    <div class="book-card" data-genero="Suspense e Mistério">
+                        <img src="livrosprt2/livro48.jpg" alt="Verity">
+                        <p>Verity</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Suspense e Mistério Jovem">
+                        <img src="livrosprt2/livro49.jpg" alt="Um de Nós Está Mentindo">
+                        <p>Um de Nós Está Mentindo</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Suspense e Mistério">
+                        <img src="livrosprt2/livro50.jpg" alt="A Garota do Lago">
+                        <p>A Garota do Lago</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Suspense e Mistério">
+                        <img src="livrosprt2/livro51.jpg" alt="A Empregada">
+                        <p>A Empregada</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Suspense e Mistério">
+                        <img src="livrosprt2/livro52.jpg" alt="A Paciente Silenciosa">
+                        <p>A Paciente Silenciosa</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Suspense e Mistério">
+                        <img src="livrosprt2/livro53.jpg" alt="Deixada para Trás">
+                        <p>Deixada para Trás</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Suspense e Mistério Terror">
+                        <img src="livrosprt2/livro54.jpg" alt="O Entregador de Bonecos">
+                        <p>O Entregador de Bonecos</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Terror Suspense e Mistério">
+                        <img src="livrosprt2/livro55.jpg" alt="O Exorcista">
+                        <p>O Exorcista</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+
+                    <!-- Livros de Terror -->
+                    <div class="book-card" data-genero="Terror Suspense">
+                        <img src="livrosprt2/livro59.jpg" alt="Asylum">
+                        <p>Asylum</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Terror Suspense">
+                        <img src="livrosprt2/livro60.jpg" alt="O Entregador de Bonecos">
+                        <p>O Entregador de Bonecos</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Terror">
+                        <img src="livrosprt2/livro61.jpg" alt="Title">
+                        <p>Title</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Terror">
+                        <img src="livrosprt2/livro62.jpg" alt="Torture">
+                        <p>Torture</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Terror Suspense">
+                        <img src="livrosprt2/livro63.jpg" alt="O Substituto">
+                        <p>O Substituto</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Terror Suspense">
+                        <img src="livrosprt2/livro64.jpg" alt="Dark Forest">
+                        <p>Dark Forest</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Terror Fantasia">
+                        <img src="livrosprt2/livro65.jpg" alt="Contos de Anhangá">
+                        <p>Contos de Anhangá</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Terror Suspense">
+                        <img src="livrosprt2/livro58.jpg" alt="It: A Coisa">
+                        <p>It: A Coisa</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+
+                    <!-- Livros Universitários -->
+                    <div class="book-card" data-genero="Universitária Ciências">
+                        <img src="livros3/livro82.jpg" alt="Geografia do Envelhecimento">
+                        <p>Geografia do Envelhecimento</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Universitária Saúde">
+                        <img src="livros3/livro83.jpg" alt="Políticas e Sistema de Saúde no Brasil">
+                        <p>Políticas e Sistema de Saúde no Brasil</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Universitária Saúde">
+                        <img src="livros3/livro84.jpg" alt="Ciências da Saúde">
+                        <p>Ciências da Saúde</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Universitária Saúde">
+                        <img src="livros3/livro85.jpg" alt="Práticas Integradas em Saúde">
+                        <p>Práticas Integradas em Saúde</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Universitária Direito">
+                        <img src="livros3/livro86.jpg" alt="Direito Educacional Superior">
+                        <p>Direito Educacional Superior</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Universitária Direito Revista">
+                        <img src="livros3/livro87.jpg" alt="Revista da Faculdade de Direito da Universidade Federal de Uberlândia">
+                        <p>Revista da Faculdade de Direito da Universidade Federal de Uberlândia</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Universitária Direito">
+                        <img src="livros3/livro88.jpg" alt="Educação e Direito">
+                        <p>Educação e Direito</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+                    <div class="book-card" data-genero="Universitária Saúde">
+                        <img src="livros3/livro89.jpg" alt="Saúde Não Cai do Céu">
+                        <p>Saúde Não Cai do Céu</p>
+                        <a href="#">Ver Detalhes</a>
+                    </div>
+
                 </div>
             </main>
         </div>
     </section>
+
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const campoBusca = document.getElementById('campo-busca');
+            const cardsLivros = document.querySelectorAll('.book-card');
+            const btnsCategoria = document.querySelectorAll('.btn-categoria');
+
+            function realizarFiltragem(termo) {
+                const termoLimpo = termo.toLowerCase().trim();
+
+                cardsLivros.forEach(card => {
+                    const textoTitulo = card.textContent.toLowerCase();
+                    const generoLivro = (card.getAttribute('data-genero') || '').toLowerCase();
+
+                    if (termoLimpo === '' || textoTitulo.includes(termoLimpo) || generoLivro.includes(termoLimpo)) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            // Clique nas Categorias
+            btnsCategoria.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const categoria = this.getAttribute('data-categoria');
+                    campoBusca.value = categoria;
+                    realizarFiltragem(categoria);
+                });
+            });
+
+            // Parâmetro vindo de URL (?busca=Gênero)
+            const urlParams = new URLSearchParams(window.location.search);
+            const termoUrl = urlParams.get('busca');
+
+            if (termoUrl) {
+                const valorBusca = decodeURIComponent(termoUrl);
+                campoBusca.value = valorBusca;
+                realizarFiltragem(valorBusca);
+            }
+
+            // Digitação na barra de busca
+            campoBusca.addEventListener('input', function () {
+                realizarFiltragem(this.value);
+            });
+        });
+    </script>
 </body>
 </html>

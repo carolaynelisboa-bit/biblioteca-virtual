@@ -20,7 +20,7 @@
                 </div>
             </div>
 
-           <button class="btn-primary" onclick="alert('Bem-vindo à Inovateca!'); window.location.href='Catálogo.html'">Entrar</button>
+            <button class="btn-primary" id="btnEntrar">Entrar</button>
 
             <div class="switch-auth">
                 <p>Não possui conta?</p>
@@ -30,5 +30,27 @@
     </section>  
     
     <script src="script.js"></script>
+    <script>
+        document.getElementById('btnEntrar').addEventListener('click', function() {
+            const emailDigitado = document.getElementById('email-input').value.trim();
+            const senhaDigitada = document.getElementById('senha-input').value.trim();
+
+            if (!emailDigitado || !senhaDigitada) {
+                alert('Por favor, preencha o e-mail e a senha.');
+                return;
+            }
+
+            // Busca a conta no localStorage
+            const usuarioSalvo = JSON.parse(localStorage.getItem('usuarioRegistrado'));
+
+            // Verifica se as credenciais conferem
+            if (usuarioSalvo && usuarioSalvo.email === emailDigitado && usuarioSalvo.senha === senhaDigitada) {
+                alert('Bem-vindo(a) à Inovateca, ' + usuarioSalvo.nome + '!');
+                window.location.href = 'Catálogo.html';
+            } else {
+                alert('E-mail ou senha incorretos (ou conta ainda não cadastrada).');
+            }
+        });
+    </script>
 </body>
 </html>

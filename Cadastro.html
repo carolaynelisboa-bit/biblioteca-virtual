@@ -21,11 +21,49 @@
                 <input type="password" id="cad-confirma" placeholder="Confirme a senha">
             </div>
             
-           <button class="btn-primary" onclick="if(document.getElementById('cad-nome').value !== '' && document.getElementById('cad-senha').value === document.getElementById('cad-confirma').value && document.getElementById('cad-senha').value !== '') { alert('Cadastro finalizado com sucesso!'); window.location.href='Catálogo.html'; } else { alert('Preencha os dados e verifique se as senhas são iguais.'); }">Finalizar Cadastro</button>
+            <button class="btn-primary" id="btnFinalizarCadastro">Finalizar Cadastro</button>
             <p class="switch-auth"><a href="index.html">Voltar ao Login</a></p>
         </div>
     </section>
 
     <script src="script.js"></script>
+    <script>
+        document.getElementById('btnFinalizarCadastro').addEventListener('click', function() {
+            const nome = document.getElementById('cad-nome').value.trim();
+            const email = document.getElementById('cad-email').value.trim();
+            const cpf = document.getElementById('cad-cpf').value.trim();
+            const telefone = document.getElementById('cad-telefone').value.trim();
+            const senha = document.getElementById('cad-senha').value;
+            const confirmaSenha = document.getElementById('cad-confirma').value;
+
+            // Validações básicas
+            if (!nome || !email || !senha) {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+                return;
+            }
+
+            if (senha !== confirmaSenha) {
+                alert('As senhas não coincidem. Verifique e tente novamente.');
+                return;
+            }
+
+            // Objeto com os dados do usuário
+            const usuario = {
+                nome: nome,
+                email: email,
+                cpf: cpf,
+                telefone: telefone,
+                senha: senha
+            };
+
+            // Salva os dados no localStorage
+            localStorage.setItem('usuarioRegistrado', JSON.stringify(usuario));
+
+            alert('Cadastro realizado com sucesso! Faça login para continuar.');
+            
+            // Redireciona para a tela de Login
+            window.location.href = 'index.html';
+        });
+    </script>
 </body>
 </html>
